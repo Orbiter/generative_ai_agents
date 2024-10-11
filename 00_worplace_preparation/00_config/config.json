@@ -1,0 +1,60 @@
+{
+    "models": [
+        {
+            "type": "FAST",
+            "title": "Qwen2 0.5b",
+            "model": "qwen2:0.5b-instruct-q8_0",
+            "provider": "ollama",
+            "apiBase": "http://localhost:11434",
+            "apiKey": "_"
+        },
+        {
+            "type": "AUTO",
+            "title": "Deepseek-Coder V2 16b",
+            "model": "deepseek-coder-v2:16b-lite-instruct-q8_0",
+            "provider": "ollama",
+            "apiBase": "http://localhost:11434",
+            "apiKey": "_"
+        },
+        {
+            "type": "AUTO",
+            "title": "StarCoder2-3b",
+            "model": "starcoder2:3b",
+            "provider": "ollama",
+            "apiBase": "http://localhost:11434",
+            "apiKey": "_"
+        },
+        {
+            "type": "CODE",
+            "title": "Qwen 2.5 Coder 7B",
+            "model": "qwen2.5-coder:7b-instruct-q8_0",
+            "provider": "ollama",
+            "apiBase": "http://localhost:11434",
+            "apiKey": "_"
+        },
+        {
+            "type": "CHAT",
+            "title": "InternLM2",
+            "model": "internlm2:7b-chat-v2.5-q8_0",
+            "provider": "ollama",
+            "apiBase": "http://localhost:11434",
+            "apiKey": "_"
+        },
+        {
+            "type": "CHAT",
+            "title": "Phi3 14b",
+            "model": "phi3:14b-medium-4k-instruct-q8_0",
+            "provider": "ollama",
+            "apiBase": "http://localhost:11434",
+            "apiKey": "_"
+        },
+        {
+            "type": "VAST",
+            "title": "Athene 70b",
+            "model": "",
+            "provider": "llama.cpp",
+            "apiBase": "http://localhost:8080",
+            "apiKey": "_"
+        }
+    ]
+}
