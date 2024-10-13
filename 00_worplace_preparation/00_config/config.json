@@ -1,7 +1,7 @@
 {
     "models": [
         {
-            "type": "FAST",
+            "group": "FAST",
             "title": "Qwen2 0.5b",
             "model": "qwen2:0.5b-instruct-q8_0",
             "provider": "ollama",
@@ -9,7 +9,7 @@
             "apiKey": "_"
         },
         {
-            "type": "AUTO",
+            "group": "AUTO",
             "title": "Deepseek-Coder V2 16b",
             "model": "deepseek-coder-v2:16b-lite-instruct-q8_0",
             "provider": "ollama",
@@ -17,7 +17,7 @@
             "apiKey": "_"
         },
         {
-            "type": "AUTO",
+            "group": "AUTO",
             "title": "StarCoder2-3b",
             "model": "starcoder2:3b",
             "provider": "ollama",
@@ -25,7 +25,7 @@
             "apiKey": "_"
         },
         {
-            "type": "CODE",
+            "group": "CODE",
             "title": "Qwen 2.5 Coder 7B",
             "model": "qwen2.5-coder:7b-instruct-q8_0",
             "provider": "ollama",
@@ -33,7 +33,7 @@
             "apiKey": "_"
         },
         {
-            "type": "CHAT",
+            "group": "CHAT",
             "title": "InternLM2",
             "model": "internlm2:7b-chat-v2.5-q8_0",
             "provider": "ollama",
@@ -41,7 +41,7 @@
             "apiKey": "_"
         },
         {
-            "type": "CHAT",
+            "group": "CHAT",
             "title": "Phi3 14b",
             "model": "phi3:14b-medium-4k-instruct-q8_0",
             "provider": "ollama",
@@ -49,7 +49,7 @@
             "apiKey": "_"
         },
         {
-            "type": "VAST",
+            "group": "VAST",
             "title": "Athene 70b",
             "model": "",
             "provider": "llama.cpp",
