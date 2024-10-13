@@ -132,3 +132,11 @@ The following process to discover them is recommended:
   The most usable quantization levels are q8_0 (best quality if you have enough memory) and q4_K_M (best option if you want to save as much memory as possible).
 
 If you find the model you want to use, select it either in ollama and download it with the `ollama run` command or for llama.cpp download it with the `wget` command as shown above.
+
+## Automatically download all ollama models defined in configuration file
+
+You can run the following script to automatically download all Ollama models listed in your configuration file:
+
+```bash
+./load_ollama_models.sh
+```

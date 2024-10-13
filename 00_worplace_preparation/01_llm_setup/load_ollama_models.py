@@ -4,21 +4,22 @@ from pathlib import Path
 
 # get the path of the current directory
 script_dir = Path(__file__).resolve().parent
+config_dir = script_dir.parent / "00_config"
 
 # load the config.json file
-with open(f"{script_dir}/config.json", "r") as json_data:
+with open(f"{config_dir}/config.json", "r") as json_data:
     config = json.load(json_data)
 
 # iterate over the objects in the list of the models in the config file
-types = []
+groups = []
 for model in config['models']:
     # skip the model if it is not Ollama
     if model['provider'] != 'ollama': continue
 
-    # skip the model if the type was already processed
-    typename = model['type']
-    if typename in types: continue
-    types.append(typename)
+    # skip the model if the group was already processed
+    group = model['group']
+    if group in groups: continue
+    groups.append(group)
     
     # extract host and port from apiBase to be able to set OLLAMA_HOST
     # to be able to also pull models on remote ollama servers
