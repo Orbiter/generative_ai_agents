@@ -25,9 +25,6 @@ def main():
     else:
         chat_context = ChatContext(system_prompt=system_prompt)
 
-    print(context_file)
-    print(system_prompt)
-
     # Read the user prompt from stdin
     prompt = sys.stdin.read().strip()
     if not prompt:
