@@ -1,0 +1,12 @@
+{
+    "knowledge": {
+        "explanation": "to extract one single string",
+        "template": "\{\"text\": \"<text>\"\}",
+        "prompt": "The answer to this question must be placed into the <text> placeholder within a json object using the following template: <template>"
+    },
+    "timeseries": {
+        "explanation": "to extract a pair of time-series elements",
+        "template": "\[\{\"time\": <milliseconds-since-epoch>, \"value\": <numeric-value>\}, ...\]",
+        "prompt": "The answer to this question must be a time-series data written into a JSON object with the <milliseconds-since-epoch> and the <numeric-value> placeholder using the following template: <template>"
+    },
+}
