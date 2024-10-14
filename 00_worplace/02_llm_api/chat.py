@@ -1,6 +1,6 @@
-from ChatClient import ChatClient, default_config_file
-from ChatContext import ChatContext
-from QAPair import QAPair
+from chat_client import ChatClient, default_config_file
+from chat_context import ChatContext, default_system_prompt
+from qa_pair import QAPair
 import argparse
 import sys
 import os
@@ -15,15 +15,18 @@ def main():
     group = args.group or "CHAT"
     config_file = args.config or default_config_file
     context_file = args.context or None
-    system_prompt = args.system or "Be a helpful assistant."
+    system_prompt = args.system or default_system_prompt
     chat_client = ChatClient(config_file=config_file)
     if context_file:
         if os.path.exists(context_file):
-            chat_context = ChatContext.load(context_file)
+            chat_context = ChatContext.load(context_file, system_prompt)
         else:
             chat_context = ChatContext(system_prompt=system_prompt)
     else:
         chat_context = ChatContext(system_prompt=system_prompt)
+
+    print(context_file)
+    print(system_prompt)
 
     # Read the user prompt from stdin
     prompt = sys.stdin.read().strip()

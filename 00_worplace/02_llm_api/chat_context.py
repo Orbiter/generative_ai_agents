@@ -1,5 +1,7 @@
-from QAPair import QAPair
+from qa_pair import QAPair
 import json
+
+default_system_prompt = "You are a helpful assistant."
 
 class ChatContext:
     """
@@ -11,7 +13,7 @@ class ChatContext:
 
         :param system_prompt: The initial system message guiding the assistant's behavior.
         """
-        self.system_prompt = system_prompt
+        self.system_prompt = system_prompt or default_system_prompt
         self.qa_pairs = []
 
     def add_qa_pair(self, qa_pair: QAPair):
@@ -36,16 +38,16 @@ class ChatContext:
             list_of_answers.append(qa_pair.answer)
             list_of_groups.append(qa_pair.group)
         data = {
-            'system_t': self.system_prompt,
-            'q_t': list_of_questions,
-            'a_t': list_of_answers,
-            'g_s': list_of_groups
+            's_t': self.system_prompt,
+            'q_txt': list_of_questions,
+            'a_txt': list_of_answers,
+            'g_sxt': list_of_groups
         }
         with open(filename, 'w') as f:
             json.dump(data, f, indent=2)
 
     @staticmethod
-    def load(filename: str):
+    def load(filename: str, system_prompt = default_system_prompt):
         """
         Loads the chat context from a JSON file.
 
@@ -54,8 +56,10 @@ class ChatContext:
         """
         with open(filename, 'r') as f:
             data = json.load(f)
-            new_context = ChatContext(system_prompt=data.get('system_t', ""))
-            for question, answer, group in zip(data.get('q_t', []), data.get('a_t', []), data.get('g_s', [])):
+            current_system_prompt = data.get('system_t', system_prompt)
+            if not current_system_prompt or len(current_system_prompt) == 0: current_system_prompt = system_prompt
+            new_context = ChatContext(system_prompt=current_system_prompt)
+            for question, answer, group in zip(data.get('q_txt', []), data.get('a_txt', []), data.get('g_sxt', [])):
                 new_context.qa_pairs.append(QAPair(question=question, answer=answer, group=group))
         return new_context
 

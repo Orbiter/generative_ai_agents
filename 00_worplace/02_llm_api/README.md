@@ -90,7 +90,7 @@ The `config.json` file contains configurations for different models hosted local
 First, import the `QAPair` class and create instances representing user-assistant interactions.
 
 ```python
-from qapair import QAPair
+from qa_pair import QAPair
 
 # Create QAPair instances
 qa1 = QAPair(question=\"Hello, who are you?\", answer=\"\")
