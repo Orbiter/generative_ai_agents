@@ -1,4 +1,9 @@
 {
+    "lists": {
+        "explanation": "to extract a list of strings",
+        "template": "{\"answer\": [\"<text>\", \"<text>\", \"<text>\", ...]}",
+        "prompt": "The answer to this question is a list of texts. Those texts must be placed inside the <text> placeholder within a JSON object using the following template, three dots ... denote a continuation of the list: <template>"
+    },
     "knowledge": {
         "explanation": "to extract one single string",
         "template": "{\"answer\": \"<text>\"}",
