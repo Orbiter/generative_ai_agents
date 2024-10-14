@@ -10,32 +10,32 @@
         },
         {
             "group": "AUTO",
-            "title": "Qwen2.5-Coder 1.5B",
-            "model": "qwen2.5-coder:1.5b",
+            "title": "StarCoder2-3b",
+            "model": "starcoder2:3b",
             "provider": "ollama",
             "apiBase": "http://localhost:11434",
             "apiKey": "_"
         },
         {
             "group": "CODE",
-            "title": "Qwen2.5-Coder 1.5B",
-            "model": "qwen2.5-coder:1.5b",
+            "title": "Qwen2.5-Coder 7B",
+            "model": "qwen2.5-coder:7b",
             "provider": "ollama",
             "apiBase": "http://localhost:11434",
             "apiKey": "_"
         },
         {
             "group": "CHAT",
-            "title": "Llama 3.2 3B",
-            "model": "llama3.2",
+            "title": "InternLM2.5 7B",
+            "model": "internlm2:7b",
             "provider": "ollama",
             "apiBase": "http://localhost:11434",
             "apiKey": "_"
         },
         {
             "group": "VAST",
-            "title": "Llama 3.2 3B",
-            "model": "llama3.2",
+            "title": "InternLM2.5 7B",
+            "model": "internlm2:7b",
             "provider": "ollama",
             "apiBase": "http://localhost:11434",
             "apiKey": "_"

@@ -10,34 +10,50 @@
         },
         {
             "group": "AUTO",
-            "title": "Qwen2.5-Coder 1.5B",
-            "model": "qwen2.5-coder:1.5b",
+            "title": "Deepseek-Coder V2 16b",
+            "model": "deepseek-coder-v2:16b-lite-instruct-q8_0",
+            "provider": "ollama",
+            "apiBase": "http://localhost:11434",
+            "apiKey": "_"
+        },
+        {
+            "group": "AUTO",
+            "title": "StarCoder2-3b",
+            "model": "starcoder2:3b",
             "provider": "ollama",
             "apiBase": "http://localhost:11434",
             "apiKey": "_"
         },
         {
             "group": "CODE",
-            "title": "Qwen2.5-Coder 1.5B",
-            "model": "qwen2.5-coder:1.5b",
+            "title": "Qwen 2.5 Coder 7B",
+            "model": "qwen2.5-coder:7b-instruct-q8_0",
             "provider": "ollama",
             "apiBase": "http://localhost:11434",
             "apiKey": "_"
         },
         {
             "group": "CHAT",
-            "title": "Llama 3.2 3B",
-            "model": "llama3.2",
+            "title": "InternLM2",
+            "model": "internlm2:7b-chat-v2.5-q8_0",
+            "provider": "ollama",
+            "apiBase": "http://localhost:11434",
+            "apiKey": "_"
+        },
+        {
+            "group": "CHAT",
+            "title": "Phi3 14b",
+            "model": "phi3:14b-medium-4k-instruct-q8_0",
             "provider": "ollama",
             "apiBase": "http://localhost:11434",
             "apiKey": "_"
         },
         {
             "group": "VAST",
-            "title": "Llama 3.2 3B",
-            "model": "llama3.2",
-            "provider": "ollama",
-            "apiBase": "http://localhost:11434",
+            "title": "Athene 70b",
+            "model": "",
+            "provider": "llama.cpp",
+            "apiBase": "http://localhost:8080",
             "apiKey": "_"
         }
     ]

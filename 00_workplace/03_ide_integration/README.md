@@ -24,28 +24,45 @@ Large Language Models (LLMs) are increasingly becoming a powerful tool for enhan
 
 ```
   "models": [
-    {
-      "model": "internlm2:7b-chat-v2.5-q8_0"",
-      "provider": "ollama",
-      "apiKey": "_",
-      "apiBase": "http://localhost:11434/",
-      "title": "internlm2:7b"
-    },
-    {
-      "model": "qwen2.5-coder:7b-instruct-q8_0",
-      "provider": "ollama",
-      "apiKey": "_",
-      "apiBase": "http://localhost:11434/",
-      "title": "qwen2.5-coder:7b"
-    }
-  ],
-  "tabAutocompleteModel": {
-    "title": "AUTO",
-    "provider": "ollama",
-    "model": "starcoder2:3b",
-    "apiKey": "",
-    "apiBase": "http://localhost:11434/"
-  },
+    {
+      "title": "InternLM2.5 7B",
+      "model": "internlm2:7b",
+      "provider": "ollama",
+      "apiKey": "_",
+      "apiBase": "http://localhost:11434/",
+      "systemMessage": "You are a helpful assistant. You tend to solve a question by giving a program as solution or a program to explain the solution.",
+      "completionOptions": {
+        "temperature": 0.1,
+        "maxTokens": 600,
+        "stop": ["<|im_end|>", "<|endoftext|>"]
+      }
+    },
+    {
+      "title": "Qwen2.5-Coder 7B",
+      "model": "qwen2.5-coder:7b",
+      "provider": "ollama",
+      "apiKey": "_",
+      "apiBase": "http://localhost:11434/",
+      "systemMessage": "You are a helpful assistant. You tend to solve a question by giving a program as solution or a program to explain the solution.",
+      "completionOptions": {
+        "temperature": 0.1,
+        "maxTokens": 600,
+        "stop": ["<|im_end|>", "<|endoftext|>"]
+      }
+    }
+  ],
+  "tabAutocompleteModel": {
+    "title": "StarCoder2-3b",
+    "model": "starcoder2:3b",
+    "provider": "ollama",
+    "apiKey": "_",
+    "apiBase": "http://localhost:11434/",
+    "completionOptions": {
+      "temperature": 0.1,
+      "maxTokens": 600,
+      "stop": ["<file_sep>", "<|endoftext|>"]
+    }
+  },
 ```
 
 If you have enabled different LLMs in your systen, take those LLMs and insert the model name
