@@ -4,32 +4,32 @@ import json
 default_system_prompt = "You are a helpful assistant."
 
 class ChatContext:
-    """
+    '''
     Manages a chat dialog consisting of a system prompt and a sequence of QAPairs.
-    """
+    '''
     def __init__(self, system_prompt: str):
-        """
+        '''
         Initializes the ChatContext with a system prompt.
 
         :param system_prompt: The initial system message guiding the assistant's behavior.
-        """
+        '''
         self.system_prompt = system_prompt or default_system_prompt
         self.qa_pairs = []
 
     def add_qa_pair(self, qa_pair: QAPair):
-        """
+        '''
         Adds a QAPair to the conversation history.
 
         :param qa_pair: An instance of QAPair.
-        """
+        '''
         self.qa_pairs.append(qa_pair)
 
     def save(self, filename: str):
-        """
+        '''
         Saves the chat context to a JSON file.
 
         :param filename: The path to the output JSON file.
-        """
+        '''
         list_of_questions = []
         list_of_answers = []
         list_of_groups = []
@@ -48,12 +48,12 @@ class ChatContext:
 
     @staticmethod
     def load(filename: str, system_prompt = default_system_prompt):
-        """
+        '''
         Loads the chat context from a JSON file.
 
         :param filename: The path to the input JSON file.
         :return: A new instance of ChatContext loaded from the file.
-        """
+        '''
         with open(filename, 'r') as f:
             data = json.load(f)
             current_system_prompt = data.get('system_t', system_prompt)
@@ -64,11 +64,11 @@ class ChatContext:
         return new_context
 
     def to_messages(self):
-        """
+        '''
         Converts the entire chat context into a list of message dictionaries compatible with the OpenAI API.
 
         :return: A list of messages representing the conversation history.
-        """
+        '''
         messages = [{"role": "system", "content": self.system_prompt}]
         for qa_pair in self.qa_pairs:
             messages.extend(qa_pair.to_messages())

@@ -8,25 +8,25 @@ class_dir = os.path.dirname(os.path.abspath(__file__))
 default_config_file = os.path.abspath(os.path.join(class_dir, "../00_config/config.json"))
 
 class ChatClient:
-    """
+    '''
     Implements a chat client that communicates with locally hosted LLMs
     using configurations specified in 'config.json'.
-    """
+    '''
     def __init__(self, config_file: str = default_config_file):
-        """
+        '''
         Initializes the ChatClient by loading the configuration file.
 
         :param config_file: Path to the JSON configuration file.
-        """
+        '''
         self.models = self.load_config(config_file)
 
     def load_config(self, config_file: str):
-        """
+        '''
         Loads the configuration from the given JSON file.
 
         :param config_file: Path to the JSON configuration file.
         :return: A list of model configurations.
-        """
+        '''
         try:
             with open(config_file, 'r') as f:
                 config = json.load(f)
@@ -37,19 +37,19 @@ class ChatClient:
             raise Exception(f"Error decoding JSON from '{config_file}'.")
 
     def select_model(self, group: str) -> Optional[dict]:
-        """
+        '''
         Selects a model from the configuration based on the given group.
 
         :param group: The group of model to select (e.g., 'FAST', 'AUTO').
         :return: The selected model configuration or None if not found.
-        """
+        '''
         for model in self.models:
             if model.get('group') == group:
                 return model
         return None
 
     def chat(self, group: str, chat_context, prompt: str) -> str:
-        """
+        '''
         Sends the chat context to the selected model's API endpoint
         and returns the assistant's reply.
 
@@ -57,7 +57,7 @@ class ChatClient:
         :param chat_context: An instance of ChatContext containing the conversation.
         :param prompt: The prompt for the assistant.
         :return: The assistant's reply as a string.
-        """
+        '''
         # Select the model based on the given group
         model_config = self.select_model(group)
         if not model_config:
